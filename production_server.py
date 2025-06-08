@@ -72,10 +72,11 @@ property_db = {
     }
 }
 
-@app.get("/description/{prop_id}")
-def description(prop_id: int):
+@app.get("/generate-description/{prop_id}")
+def generate_description(prop_id: int):
     features = property_db[prop_id]["features"]
     return {"description": generate_property_description(features)}
+
 
 @app.get("/valuation/{prop_id}")
 def valuation(prop_id: int):
