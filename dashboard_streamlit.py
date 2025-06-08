@@ -9,7 +9,7 @@ Created on Sun Jun  8 17:32:05 2025
 # dashboard_streamlit.py - Streamlit-based frontend for Estatech.ch platform
 
 import streamlit as st
-from estatech_main import property_db
+from main import property_db
 from ai_service import generate_property_description
 from valuation_service import get_avm
 from report_service import generate_report
