@@ -21,7 +21,27 @@ from lead_scoring import score_lead
 from media_integration import save_media_files, list_media
 from marketing_generator import generate_social_post
 
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
+
 app = FastAPI(title="Estatech.ch AI Platform", docs_url="/docs")
+
+@app.get("/", response_class=HTMLResponse)
+def root():
+    return """
+    <html>
+      <head><title>Estatech AI Platform</title></head>
+      <body>
+        <h1>🏡 Estatech.ch - AI-Powered Luxury Real Estate Platform</h1>
+        <ul>
+          <li><a href="/generate-description/1">Generate Description</a></li>
+          <li><a href="/valuation/1">Get Valuation</a></li>
+          <li><a href="/download-report/1">Download Report</a></li>
+        </ul>
+      </body>
+    </html>
+    """
+
 
 app.add_middleware(
     CORSMiddleware,
