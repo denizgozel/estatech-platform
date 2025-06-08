@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: estatech-backend
+    env: docker
+    plan: free
+    repo: https://github.com/denizgozel/estatech-platform
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+
+  - type: web
+    name: estatech-dashboard
+    env: python
+    plan: free
+    repo: https://github.com/denizgozel/estatech-platform
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run dashboard_streamlit.py --server.port 10000 --server.enableCORS false
+    autoDeploy: true
+    envVars:
+      - key: API_URL
+        value: https://estatech-backend.onrender.com
+
