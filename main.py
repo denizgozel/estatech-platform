@@ -2,16 +2,13 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sun Jun  8 17:28:40 2025
-
 @author: denizgozel
 """
 
-# estatech_main.py - Entry point for the Estatech AI-powered real estate marketing platform
-
-from fastapi import FastAPI, UploadFile, Form
+from fastapi import FastAPI
 from fastapi.responses import Response, HTMLResponse
 from typing import Dict
-import uvicorn
+import json
 import os
 
 from ai_service import generate_property_description
@@ -20,26 +17,16 @@ from report_service import generate_report
 
 app = FastAPI()
 
-# Mock in-memory DB for demonstration
-property_db: Dict[int, Dict] = {
-    1: {
-        "title": "Lakeside Villa with Infinity Pool",
-        "features": {
-            "location": "Montreux, Switzerland",
-            "area": "450 sqm",
-            "bedrooms": 5,
-            "bathrooms": 4,
-            "special_features": ["Infinity pool", "Lake view", "Private dock"],
-        },
-        "address": "Chemin de la Tour 12, Montreux, Switzerland",
-        "lead_features": {
-            "income": 500000,
-            "search_duration_months": 4,
-            "property_interactions": 15,
-            "clicked_ads": 3
-        }
-    }
-}
+# ✅ Load property DB from JSON file
+PROPERTY_DB_PATH = "property_db.json"
+
+def load_property_db() -> Dict[int, Dict]:
+    with open(PROPERTY_DB_PATH, "r") as f:
+        data = json.load(f)
+    # Ensure keys are integers (JSON keys are strings by default)
+    return {int(k): v for k, v in data.items()}
+
+property_db = load_property_db()
 
 @app.get("/")
 def root():
@@ -72,4 +59,5 @@ def download_report(prop_id: int):
     return Response(content=pdf, media_type="application/pdf")
 
 if __name__ == "__main__":
+    import uvicorn
     uvicorn.run("estatech_main:app", host="0.0.0.0", port=8000, reload=True)
