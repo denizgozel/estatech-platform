@@ -7,11 +7,10 @@ Created on Sun Jun  8 17:33:28 2025
 """
 
 # marketing_generator.py - AI-powered marketing content creator for luxury real estate
-
+import os
 from openai import OpenAI
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-import os
 
 # Set your OpenAI API key (or load from environment)
 
