@@ -1,0 +1,422 @@
+{
+    "1": {
+        "title": "Garden Home in Verbier",
+        "features": {
+            "location": "Verbier, Switzerland",
+            "area": "332 sqm",
+            "bedrooms": 5,
+            "bathrooms": 3,
+            "special_features": [
+                "Garden",
+                "Lake view",
+                "Fireplace"
+            ]
+        },
+        "address": "7929 Thomas Trail, Fieldshaven, RI 15761",
+        "lead_features": {
+            "income": 233277,
+            "search_duration_months": 9,
+            "property_interactions": 25,
+            "clicked_ads": 4
+        }
+    },
+    "2": {
+        "title": "Infinity pool Home in Basel",
+        "features": {
+            "location": "Basel, Switzerland",
+            "area": "681 sqm",
+            "bedrooms": 7,
+            "bathrooms": 4,
+            "special_features": [
+                "Infinity pool",
+                "Smart home system",
+                "Private elevator"
+            ]
+        },
+        "address": "09686 Matthew Mountain Suite 823, Raymondfort, CT 11403",
+        "lead_features": {
+            "income": 439843,
+            "search_duration_months": 6,
+            "property_interactions": 11,
+            "clicked_ads": 1
+        }
+    },
+    "3": {
+        "title": "City skyline view Home in Montreux",
+        "features": {
+            "location": "Montreux, Switzerland",
+            "area": "467 sqm",
+            "bedrooms": 3,
+            "bathrooms": 4,
+            "special_features": [
+                "City skyline view",
+                "Rooftop terrace",
+                "Garden"
+            ]
+        },
+        "address": "9020 Brian Crossroad Apt. 720, Danielfort, AK 17042",
+        "lead_features": {
+            "income": 496939,
+            "search_duration_months": 12,
+            "property_interactions": 8,
+            "clicked_ads": 6
+        }
+    },
+    "4": {
+        "title": "Ski-in/Ski-out Home in Neuch\u00e2tel",
+        "features": {
+            "location": "Neuch\u00e2tel, Switzerland",
+            "area": "591 sqm",
+            "bedrooms": 4,
+            "bathrooms": 5,
+            "special_features": [
+                "Ski-in/Ski-out",
+                "Home theater",
+                "Art gallery"
+            ]
+        },
+        "address": "748 Shelton Plaza Suite 826, Warrenburgh, WY 42971",
+        "lead_features": {
+            "income": 345165,
+            "search_duration_months": 3,
+            "property_interactions": 22,
+            "clicked_ads": 8
+        }
+    },
+    "5": {
+        "title": "Fireplace Home in Neuch\u00e2tel",
+        "features": {
+            "location": "Neuch\u00e2tel, Switzerland",
+            "area": "292 sqm",
+            "bedrooms": 7,
+            "bathrooms": 3,
+            "special_features": [
+                "Fireplace",
+                "Private dock",
+                "Library"
+            ]
+        },
+        "address": "PSC 2534, Box 7035, APO AP 83352",
+        "lead_features": {
+            "income": 896727,
+            "search_duration_months": 12,
+            "property_interactions": 6,
+            "clicked_ads": 7
+        }
+    },
+    "6": {
+        "title": "Fireplace Home in Z\u00fcrich",
+        "features": {
+            "location": "Z\u00fcrich, Switzerland",
+            "area": "568 sqm",
+            "bedrooms": 7,
+            "bathrooms": 5,
+            "special_features": [
+                "Fireplace",
+                "Jacuzzi",
+                "Lake view"
+            ]
+        },
+        "address": "PSC 5185, Box 8885, APO AP 71317",
+        "lead_features": {
+            "income": 649677,
+            "search_duration_months": 7,
+            "property_interactions": 6,
+            "clicked_ads": 9
+        }
+    },
+    "7": {
+        "title": "Solar panels Home in Lucerne",
+        "features": {
+            "location": "Lucerne, Switzerland",
+            "area": "628 sqm",
+            "bedrooms": 3,
+            "bathrooms": 3,
+            "special_features": [
+                "Solar panels",
+                "Private elevator",
+                "Smart home system"
+            ]
+        },
+        "address": "21604 Cody Corners, Lake Amyfurt, CA 98629",
+        "lead_features": {
+            "income": 750727,
+            "search_duration_months": 2,
+            "property_interactions": 24,
+            "clicked_ads": 1
+        }
+    },
+    "8": {
+        "title": "Panic room Home in Lucerne",
+        "features": {
+            "location": "Lucerne, Switzerland",
+            "area": "755 sqm",
+            "bedrooms": 6,
+            "bathrooms": 3,
+            "special_features": [
+                "Panic room",
+                "Private dock",
+                "Mountain view"
+            ]
+        },
+        "address": "163 Deborah Harbors Apt. 492, Lake Andrew, MT 93808",
+        "lead_features": {
+            "income": 225642,
+            "search_duration_months": 7,
+            "property_interactions": 23,
+            "clicked_ads": 6
+        }
+    },
+    "9": {
+        "title": "Mountain view Home in Lucerne",
+        "features": {
+            "location": "Lucerne, Switzerland",
+            "area": "710 sqm",
+            "bedrooms": 5,
+            "bathrooms": 2,
+            "special_features": [
+                "Mountain view",
+                "Panic room",
+                "Wine cellar"
+            ]
+        },
+        "address": "USS Jones, FPO AE 70617",
+        "lead_features": {
+            "income": 265231,
+            "search_duration_months": 2,
+            "property_interactions": 12,
+            "clicked_ads": 3
+        }
+    },
+    "10": {
+        "title": "Panic room Home in Neuch\u00e2tel",
+        "features": {
+            "location": "Neuch\u00e2tel, Switzerland",
+            "area": "684 sqm",
+            "bedrooms": 7,
+            "bathrooms": 4,
+            "special_features": [
+                "Panic room",
+                "Lake view",
+                "Mountain view"
+            ]
+        },
+        "address": "692 Schneider Rapids Suite 110, North Diana, AL 09982",
+        "lead_features": {
+            "income": 610844,
+            "search_duration_months": 10,
+            "property_interactions": 30,
+            "clicked_ads": 10
+        }
+    },
+    "11": {
+        "title": "Garden Home in Montreux",
+        "features": {
+            "location": "Montreux, Switzerland",
+            "area": "748 sqm",
+            "bedrooms": 3,
+            "bathrooms": 2,
+            "special_features": [
+                "Garden",
+                "Fireplace",
+                "Sauna"
+            ]
+        },
+        "address": "43084 Katherine Tunnel Suite 116, New Taratown, MD 66402",
+        "lead_features": {
+            "income": 901130,
+            "search_duration_months": 2,
+            "property_interactions": 30,
+            "clicked_ads": 3
+        }
+    },
+    "12": {
+        "title": "Library Home in Montreux",
+        "features": {
+            "location": "Montreux, Switzerland",
+            "area": "554 sqm",
+            "bedrooms": 4,
+            "bathrooms": 4,
+            "special_features": [
+                "Library",
+                "Lake view",
+                "Art gallery"
+            ]
+        },
+        "address": "138 Trevor Well Apt. 062, North Jonathan, OK 84412",
+        "lead_features": {
+            "income": 224896,
+            "search_duration_months": 2,
+            "property_interactions": 27,
+            "clicked_ads": 5
+        }
+    },
+    "13": {
+        "title": "Art gallery Home in Lausanne",
+        "features": {
+            "location": "Lausanne, Switzerland",
+            "area": "317 sqm",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "special_features": [
+                "Art gallery",
+                "Private dock",
+                "Wine cellar"
+            ]
+        },
+        "address": "6238 Hill Skyway, Stonefort, ID 24914",
+        "lead_features": {
+            "income": 288534,
+            "search_duration_months": 10,
+            "property_interactions": 28,
+            "clicked_ads": 4
+        }
+    },
+    "14": {
+        "title": "Fireplace Home in Geneva",
+        "features": {
+            "location": "Geneva, Switzerland",
+            "area": "608 sqm",
+            "bedrooms": 7,
+            "bathrooms": 4,
+            "special_features": [
+                "Fireplace",
+                "Library",
+                "Rooftop terrace"
+            ]
+        },
+        "address": "397 Angela Mountain Apt. 345, Sallyside, MO 28414",
+        "lead_features": {
+            "income": 941063,
+            "search_duration_months": 10,
+            "property_interactions": 14,
+            "clicked_ads": 5
+        }
+    },
+    "15": {
+        "title": "Art gallery Home in Lucerne",
+        "features": {
+            "location": "Lucerne, Switzerland",
+            "area": "220 sqm",
+            "bedrooms": 4,
+            "bathrooms": 3,
+            "special_features": [
+                "Art gallery",
+                "Rooftop terrace",
+                "Lake view"
+            ]
+        },
+        "address": "298 Lauren Haven, New Jacobton, WI 28332",
+        "lead_features": {
+            "income": 894296,
+            "search_duration_months": 12,
+            "property_interactions": 20,
+            "clicked_ads": 5
+        }
+    },
+    "16": {
+        "title": "Solar panels Home in Lugano",
+        "features": {
+            "location": "Lugano, Switzerland",
+            "area": "480 sqm",
+            "bedrooms": 5,
+            "bathrooms": 3,
+            "special_features": [
+                "Solar panels",
+                "Fireplace",
+                "Home theater"
+            ]
+        },
+        "address": "380 Teresa Forges, Tinafurt, IL 46933",
+        "lead_features": {
+            "income": 309748,
+            "search_duration_months": 7,
+            "property_interactions": 25,
+            "clicked_ads": 6
+        }
+    },
+    "17": {
+        "title": "Lake view Home in Montreux",
+        "features": {
+            "location": "Montreux, Switzerland",
+            "area": "571 sqm",
+            "bedrooms": 6,
+            "bathrooms": 2,
+            "special_features": [
+                "Lake view",
+                "Library",
+                "City skyline view"
+            ]
+        },
+        "address": "USCGC Rose, FPO AP 30224",
+        "lead_features": {
+            "income": 819502,
+            "search_duration_months": 2,
+            "property_interactions": 27,
+            "clicked_ads": 1
+        }
+    },
+    "18": {
+        "title": "Smart home system Home in Basel",
+        "features": {
+            "location": "Basel, Switzerland",
+            "area": "575 sqm",
+            "bedrooms": 4,
+            "bathrooms": 4,
+            "special_features": [
+                "Smart home system",
+                "Infinity pool",
+                "Mountain view"
+            ]
+        },
+        "address": "545 Taylor Estate Suite 457, East Samanthaland, UT 61044",
+        "lead_features": {
+            "income": 644153,
+            "search_duration_months": 7,
+            "property_interactions": 5,
+            "clicked_ads": 4
+        }
+    },
+    "19": {
+        "title": "Solar panels Home in Z\u00fcrich",
+        "features": {
+            "location": "Z\u00fcrich, Switzerland",
+            "area": "639 sqm",
+            "bedrooms": 5,
+            "bathrooms": 4,
+            "special_features": [
+                "Solar panels",
+                "Garden",
+                "Panic room"
+            ]
+        },
+        "address": "Unit 8792 Box 0196, DPO AP 29770",
+        "lead_features": {
+            "income": 736866,
+            "search_duration_months": 9,
+            "property_interactions": 28,
+            "clicked_ads": 1
+        }
+    },
+    "20": {
+        "title": "Solar panels Home in Basel",
+        "features": {
+            "location": "Basel, Switzerland",
+            "area": "412 sqm",
+            "bedrooms": 4,
+            "bathrooms": 4,
+            "special_features": [
+                "Solar panels",
+                "Panic room",
+                "Indoor gym"
+            ]
+        },
+        "address": "956 Diaz Curve Apt. 325, Victoriaside, AZ 18244",
+        "lead_features": {
+            "income": 857543,
+            "search_duration_months": 3,
+            "property_interactions": 11,
+            "clicked_ads": 4
+        }
+    }
+}
