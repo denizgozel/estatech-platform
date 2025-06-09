@@ -89,12 +89,25 @@ with st.form("new_property_form"):
     address = st.text_input("Full Address")
     submitted = st.form_submit_button("Add Property")
 
+    st.subheader("➕ Add a New Property")
+with st.form("new_property_form"):
+    new_id = st.number_input("Unique Property ID", min_value=1, step=1)
+    title = st.text_input("Property Title")
+    location = st.text_input("Location")
+    area = st.text_input("Area (e.g., 300 sqm)")
+    bedrooms = st.number_input("Bedrooms", min_value=1, max_value=10)
+    bathrooms = st.number_input("Bathrooms", min_value=1, max_value=10)
+    special_features = st.text_area("Special Features (comma-separated)")
+    address = st.text_input("Full Address")
+    submitted = st.form_submit_button("Add Property")
+
     if submitted:
         if not title or not location or not address:
             st.error("Please fill in all required fields.")
+        elif new_id in property_db:
+            st.error(f"Property ID {new_id} already exists. Choose a different ID.")
         else:
-            new_id = max(property_db.keys()) + 1 if property_db else 1
-            property_db[new_id] = {
+            property_db[int(new_id)] = {
                 "title": title,
                 "features": {
                     "location": location,
@@ -111,6 +124,11 @@ with st.form("new_property_form"):
                     "clicked_ads": 0
                 }
             }
+            with open(DB_FILE, "w") as f:
+                json.dump({str(k): v for k, v in property_db.items()}, f, indent=2)
+            st.success(f"Property '{title}' added with ID {new_id}")
+            st.experimental_rerun()
+
             with open(DB_FILE, "w") as f:
                 json.dump({str(k): v for k, v in property_db.items()}, f, indent=2)
             st.success(f"Property '{title}' added with ID {new_id}")
