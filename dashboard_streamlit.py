@@ -26,7 +26,7 @@ else:
     property_db = {}
 
 st.set_page_config(page_title="Estatech.ch Dashboard", layout="wide")
-st.title("\U0001F3E1 Estatech.ch | Luxury Property Intelligence Dashboard")
+st.title("🏡 Estatech.ch | Luxury Property Intelligence Dashboard")
 
 # Select existing property
 selected_id = st.selectbox("Select Property ID", list(property_db.keys()))
@@ -34,7 +34,7 @@ if selected_id:
     prop = property_db[selected_id]
 
     st.header(prop["title"])
-    st.subheader("\ud83d\udccd " + prop["features"]["location"])
+    st.subheader("📍 " + prop["features"]["location"])
 
     col1, col2 = st.columns(2)
 
@@ -60,16 +60,16 @@ if selected_id:
 
     st.divider()
 
-    if st.button("\ud83d\udcdd Generate AI Description"):
+    if st.button("📝 Generate AI Description"):
         desc = generate_property_description(prop["features"])
         st.success("Generated Description:")
         st.write(desc)
 
-    if st.button("\ud83d\udcc4 Download PDF Report"):
+    if st.button("📄 Download PDF Report"):
         pdf_bytes = generate_report(prop)
         st.download_button("Download PDF", pdf_bytes, file_name="estatech_report.pdf", mime="application/pdf")
 
-    if st.button("\ud83d\uddd1\ufe0f Delete This Property"):
+    if st.button("🗑️ Delete This Property"):
         del property_db[selected_id]
         with open(DB_FILE, "w") as f:
             json.dump({str(k): v for k, v in property_db.items()}, f, indent=2)
