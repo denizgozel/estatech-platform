@@ -77,19 +77,8 @@ if selected_id:
 
 st.divider()
 
-# Add new property
-st.subheader("➕ Add a New Property")
-with st.form("new_property_form"):
-    title = st.text_input("Property Title")
-    location = st.text_input("Location")
-    area = st.text_input("Area (e.g., 300 sqm)")
-    bedrooms = st.number_input("Bedrooms", min_value=1, max_value=10)
-    bathrooms = st.number_input("Bathrooms", min_value=1, max_value=10)
-    special_features = st.text_area("Special Features (comma-separated)")
-    address = st.text_input("Full Address")
-    submitted = st.form_submit_button("Add Property")
 
-    st.subheader("➕ Add a New Property")
+st.subheader("➕ Add a New Property")
 with st.form("new_property_form"):
     new_id = st.number_input("Unique Property ID", min_value=1, step=1)
     title = st.text_input("Property Title")
