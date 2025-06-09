@@ -26,7 +26,7 @@ else:
     property_db = {}
 
 st.set_page_config(page_title="Estatech.ch Dashboard", layout="wide")
-st.title("🏡 Estatech.ch | Luxury Property Intelligence Dashboard")
+st.title("\U0001F3E1 Estatech.ch | Luxury Property Intelligence Dashboard")
 
 # Select existing property
 selected_id = st.selectbox("Select Property ID", list(property_db.keys()))
@@ -34,7 +34,7 @@ if selected_id:
     prop = property_db[selected_id]
 
     st.header(prop["title"])
-    st.subheader("📍 " + prop["features"]["location"])
+    st.subheader("\ud83d\udccd " + prop["features"]["location"])
 
     col1, col2 = st.columns(2)
 
@@ -47,26 +47,32 @@ if selected_id:
 
     with col2:
         st.write("### Market Valuation")
-        avm = get_avm(prop["address"])
+        if "valuation" not in prop:
+            prop["valuation"] = get_avm(prop["address"])
+            property_db[selected_id] = prop
+            with open(DB_FILE, "w") as f:
+                json.dump({str(k): v for k, v in property_db.items()}, f, indent=2)
+
+        avm = prop["valuation"]
         st.metric("Estimated Value", f"CHF {avm['estimated_value']:,}")
         st.progress(avm['confidence'])
         st.line_chart({entry['month']: entry['price'] for entry in avm['neighborhood_trends']})
 
     st.divider()
 
-    if st.button("📝 Generate AI Description"):
+    if st.button("\ud83d\udcdd Generate AI Description"):
         desc = generate_property_description(prop["features"])
         st.success("Generated Description:")
         st.write(desc)
 
-    if st.button("📄 Download PDF Report"):
+    if st.button("\ud83d\udcc4 Download PDF Report"):
         pdf_bytes = generate_report(prop)
         st.download_button("Download PDF", pdf_bytes, file_name="estatech_report.pdf", mime="application/pdf")
 
-    if st.button("🗑️ Delete This Property"):
+    if st.button("\ud83d\uddd1\ufe0f Delete This Property"):
         del property_db[selected_id]
         with open(DB_FILE, "w") as f:
-            json.dump(property_db, f, indent=2)
+            json.dump({str(k): v for k, v in property_db.items()}, f, indent=2)
         st.experimental_rerun()
 
 st.divider()
@@ -84,30 +90,33 @@ with st.form("new_property_form"):
     submitted = st.form_submit_button("Add Property")
 
     if submitted:
-        new_id = max(property_db.keys()) + 1 if property_db else 1
-        property_db[new_id] = {
-            "title": title,
-            "features": {
-                "location": location,
-                "area": area,
-                "bedrooms": int(bedrooms),
-                "bathrooms": int(bathrooms),
-                "special_features": [s.strip() for s in special_features.split(",") if s.strip()]
-            },
-            "address": address,
-            "lead_features": {
-                "income": 0,
-                "search_duration_months": 0,
-                "property_interactions": 0,
-                "clicked_ads": 0
+        if not title or not location or not address:
+            st.error("Please fill in all required fields.")
+        else:
+            new_id = max(property_db.keys()) + 1 if property_db else 1
+            property_db[new_id] = {
+                "title": title,
+                "features": {
+                    "location": location,
+                    "area": area,
+                    "bedrooms": int(bedrooms),
+                    "bathrooms": int(bathrooms),
+                    "special_features": [s.strip() for s in special_features.split(",") if s.strip()]
+                },
+                "address": address,
+                "lead_features": {
+                    "income": 0,
+                    "search_duration_months": 0,
+                    "property_interactions": 0,
+                    "clicked_ads": 0
+                }
             }
-        }
-        with open(DB_FILE, "w") as f:
-            json.dump(property_db, f, indent=2)
-        st.success(f"Property '{title}' added with ID {new_id}")
-        st.experimental_rerun()
+            with open(DB_FILE, "w") as f:
+                json.dump({str(k): v for k, v in property_db.items()}, f, indent=2)
+            st.success(f"Property '{title}' added with ID {new_id}")
+            st.experimental_rerun()
 
 # Save DB changes
 if property_db:
     with open(DB_FILE, "w") as f:
-        json.dump(property_db, f, indent=2)
+        json.dump({str(k): v for k, v in property_db.items()}, f, indent=2)
