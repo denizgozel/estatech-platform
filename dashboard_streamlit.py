@@ -13,6 +13,11 @@ from main import property_db
 from ai_service import generate_property_description
 from valuation_service import get_avm
 from report_service import generate_report
+import json
+
+with open("property_db.json", "r") as f:
+    property_db = json.load(f)
+property_db = {int(k): v for k, v in property_db.items()}
 
 st.set_page_config(page_title="Estatech.ch Dashboard", layout="wide")
 st.title("🏡 Estatech.ch | Luxury Property Intelligence Dashboard")
