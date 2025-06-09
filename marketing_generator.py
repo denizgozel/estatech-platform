@@ -8,11 +8,12 @@ Created on Sun Jun  8 17:33:28 2025
 
 # marketing_generator.py - AI-powered marketing content creator for luxury real estate
 
-import openai
+from openai import OpenAI
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 import os
 
 # Set your OpenAI API key (or load from environment)
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 def generate_social_post(property_title: str, location: str, features: list, platform: str = "Instagram") -> str:
@@ -28,13 +29,11 @@ def generate_social_post(property_title: str, location: str, features: list, pla
     )
 
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-4",
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.8,
-            max_tokens=150
-        )
-        return response["choices"][0]["message"]["content"].strip()
+        response = client.chat.completions.create(model="gpt-4",
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.8,
+        max_tokens=150)
+        return response.choices[0].message.content.strip()
     except Exception as e:
         return f"[Error generating marketing post: {str(e)}]"
 

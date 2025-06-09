@@ -6,14 +6,13 @@ Created on Sun Jun  8 17:29:28 2025
 @author: denizgozel
 """
 
-# ai_service.py - AI module for generating luxury property descriptions
+# ai_service.py - AI module for generating luxury property descriptions (OpenAI SDK v1+)
 
-import openai
 import os
+from openai import OpenAI
 
-# Set your OpenAI key as an environment variable or define it here
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
+# Initialize OpenAI client
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def generate_property_description(features: dict) -> str:
     """
@@ -30,12 +29,14 @@ def generate_property_description(features: dict) -> str:
     )
 
     try:
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-4",
-            messages=[{"role": "user", "content": prompt}],
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
             temperature=0.7,
             max_tokens=300
         )
-        return response["choices"][0]["message"]["content"].strip()
+        return response.choices[0].message.content.strip()
     except Exception as e:
         return f"[Error generating description: {str(e)}]"
